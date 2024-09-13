@@ -109,9 +109,10 @@ public class TenTask{
         int table = student - place;
         if((place < student) && table % 2 != 0 ){
             return (table + 1) / 2;
-        } else {
+        } else if((place < student) && table % 2 == 0) {
+            return table / 2;
+        } else{
             return 0;
         }
-
     }
 }
