@@ -7,15 +7,19 @@ abstract class GeometricFigure {
     protected double volume;
     public static void main(String[] args) {
 
-        Sphere sphere = new Sphere("Red", 5);
+        Sphere sphere = new Sphere();
         sphere.calculateVolume();
         sphere.displayInfo();
+
+        Sphere sphere1 = new Sphere("blue", 35, "ferrum");
+        sphere1.calculateVolume();
+        sphere1.displayInfo();
 
         Parallelepiped parallelepiped = new Parallelepiped("Blue", 2, 3, 4);
         parallelepiped.calculateVolume();
         parallelepiped.displayInfo();
 
-        Cylinder cylinder = new Cylinder("Green", 3, 7);
+        Cylinder cylinder = new Cylinder("Green", 3, 7, true);
         cylinder.calculateVolume();
         cylinder.displayInfo();
 
@@ -56,25 +60,26 @@ abstract class GeometricFigure {
         return volume;
     }
 
-    public void displayInfo() {
-        System.out.println("Figure: " + name + ", Color: " + color + ", Volume: " + volume);
-    }
+    public abstract void displayInfo();
 }
 
 
 class Sphere extends GeometricFigure {
     private double radius; 
     private static int sphereCount = 0; 
+    private String material;
 
     public Sphere() {
         super("Sphere", "No color");
         this.radius = 0.0;
+        this.material = "Unknown";
         sphereCount++;
     }
 
-    public Sphere(String color, double radius) {
+    public Sphere(String color, double radius, String material) {
         super("Sphere", color);
         this.radius = radius;
+        this.material = material; 
         sphereCount++;
     }
 
@@ -82,7 +87,20 @@ class Sphere extends GeometricFigure {
     public void calculateVolume() {
         this.volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
     }
+    @Override
+    public void displayInfo() {
+        System.out.println("Figure: " + name + ", Color: " + color + ", Volume: " + volume +
+                           ", Radius: " + radius + ", Material: " + material);
+    }
     
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
     public double getRadius() {
         return radius;
     }
@@ -118,6 +136,11 @@ class Parallelepiped extends GeometricFigure {
     public void calculateVolume() {
         this.volume = length * width * height;
     }
+    @Override
+    public void displayInfo() {
+        System.out.println("Figure: " + name + ", Color: " + color + ", Volume: " + volume +
+                           ", Length: "+ length +  ", Height: " + height + ", Width: " + width);
+    }
 
     public double getLength() {
         return length;
@@ -146,22 +169,38 @@ class Parallelepiped extends GeometricFigure {
 
 class Cylinder extends GeometricFigure {
     private double radius, height; 
+    private boolean isHollow;
 
     public Cylinder() {
         super("Cylinder", "No color");
         this.radius = 0.0;
         this.height = 0.0;
+        this.isHollow = false;
     }
 
-    public Cylinder(String color, double radius, double height) {
+    public Cylinder(String color, double radius, double height, boolean isHollow) {
         super("Cylinder", color);
         this.radius = radius;
         this.height = height;
+        this.isHollow = isHollow;
     }
 
     @Override
     public void calculateVolume() {
         this.volume = Math.PI * Math.pow(radius, 2) * height;
+    }
+    @Override
+    public void displayInfo() {
+        System.out.println("Figure: " + name + ", Color: " + color + ", Volume: " + volume +
+                           ", Radius: " + radius + ", Height: " + height + ", Is Hollow: " + isHollow);
+    }
+
+    public boolean isHollow() {
+        return isHollow;
+    }
+
+    public void setHollow(boolean isHollow) {
+        this.isHollow = isHollow;
     }
 
     public double getRadius() {

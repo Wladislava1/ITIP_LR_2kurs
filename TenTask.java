@@ -1,4 +1,3 @@
-package task;
 public class TenTask{
     public static void main(String[] args) {
         System.out.println("task1");
