@@ -23,6 +23,9 @@ abstract class GeometricFigure {
         cylinder.calculateVolume();
         cylinder.displayInfo();
 
+        Cub cub = new Cub("blue", 4);
+        cub.displayInfo();
+
         System.out.println("Общее количество созданных сфер:" + Sphere.getSphereCount());
     }
 
@@ -219,6 +222,34 @@ class Cylinder extends GeometricFigure {
         this.height = height;
     }
 }
+class Cub extends Parallelepiped {
+
+        public Cub() {
+            super("No color", 0.0, 0.0, 0.0); 
+            this.name = "Cub";  
+        }
+    
+        public Cub(String color, double sideLength) {
+            super(color, sideLength, sideLength, sideLength);
+            this.name = "Cub";  
+        }
+        @Override
+        public void displayInfo() {
+            System.out.println("Figure: " + name + ", Color: " + color +  
+                               ", Side length: " + getLength()); 
+        }
+        
+        public double getSideLength() {
+            return getLength(); 
+        }
+    
+        public void setSideLength(double sideLength) {
+            setLength(sideLength);
+            setWidth(sideLength);
+            setHeight(sideLength); 
+        }
+    }
+    
 
 
 
