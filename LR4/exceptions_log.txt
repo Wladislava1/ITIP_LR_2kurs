@@ -1,0 +1,4 @@
+Исключение: CustomEmptyStackException: Попытка извлечь элемент из пустого стека
+	at CustomStack.pop(CustomStack.java:16)
+	at Main.main(Main.java:8)
+--------------------------------------------------
