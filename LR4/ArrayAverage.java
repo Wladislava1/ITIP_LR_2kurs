@@ -1,12 +1,12 @@
 public class ArrayAverage {
     public static void main(String[] args) {
-        String[] arr = {"1", "2", "ф", "4", "5"};
-        int sum = 0;
+        String[] arr = {"1.0", "2", "3", "4", "5"};
+        double sum = 0;
         int count = 0;
         
         try {
-            for (int i = 0; i < arr.length; i++) {
-                int num = Integer.parseInt(arr[i]);
+            for (int i = 0; i <= arr.length; i++) {
+                double num = Double.parseDouble(arr[i]);
                 sum += num;
                 count++;
             }

@@ -11,13 +11,14 @@ public class FileCopy {
 
         String sourceFile = args[0]; 
         String destFile = args[1];   
-
+ 
         FileInputStream inputStream = null;
         FileOutputStream outputStream = null;
 
         try {
             inputStream = new FileInputStream(sourceFile);
             outputStream = new FileOutputStream(destFile);
+            inputStream.close();
 
             byte[] buffer = new byte[1024];
             int length;
@@ -27,7 +28,6 @@ public class FileCopy {
             }
 
             System.out.println("Файл успешно скопирован из " + sourceFile + " в " + destFile + ".");
-
         } catch (IOException e) {
             System.out.println("Ошибка при копировании файла: " + e.getMessage());
         } finally {
@@ -37,9 +37,10 @@ public class FileCopy {
                 }
                 if (outputStream != null) {
                     outputStream.close();
+
                 }
             } catch (IOException e) {
-                System.out.println("Ошибка при закрытии файла: " + e.getMessage());
+                System.out.println("Ошибка при копировании файла: " + e.getMessage());
             }
         }
     }

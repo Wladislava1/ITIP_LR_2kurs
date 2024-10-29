@@ -41,7 +41,6 @@ class Student {
 }
 
 public class StudentHashTable {
-
     private HashMap<String, Student> studentMap;
 
     public StudentHashTable() {
