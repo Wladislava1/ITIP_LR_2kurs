@@ -4,7 +4,7 @@ public class UpperCharFinder {
     public static void main(String[] args) {
         String text = "This is a simpleTest example where we find testCases in text.";
 
-        Pattern pattern = Pattern.compile("([a-z])([A-Z])");
+        Pattern pattern = Pattern.compile("([a-z])([A-Z])");//([a-zA-Zа-яА-Я])([a-zA-Zа-яА-Я])
         Matcher matcher = pattern.matcher(text);
 
         StringBuffer modifiedText = new StringBuffer();

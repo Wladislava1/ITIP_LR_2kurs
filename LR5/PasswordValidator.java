@@ -4,7 +4,7 @@ public class PasswordValidator {
     public static void main(String[] args) {
         String password = "Passw0rd123"; 
 
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,16}$");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,16}$");//"^(?=.*[A-ZА-Я])(?=.*\\d)[A-Za-zА-Яа-я\\d]{8,16}$"
 
         try {
             Matcher matcher = pattern.matcher(password);
