@@ -5,7 +5,7 @@ public class WordsFinder {
         String text = "The quick brown fox jumps over the lazy dog. This is a test sentence.";
         char letter = 't';
 
-        Pattern pattern = Pattern.compile("\\b" + letter + "\\w*\\b", Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile("\\b\\w*" + letter + "\\w*\\b", Pattern.CASE_INSENSITIVE);
 
         try {
             Matcher matcher = pattern.matcher(text);
