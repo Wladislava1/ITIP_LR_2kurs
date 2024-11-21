@@ -1,4 +1,12 @@
-Hello world! Hello, 
-Java. Java is great. 
-Hello to the world of 
-Java programming.
+The sun is shining. 
+The sun is bright. 
+The sky is blue. 
+The sky is clear. 
+Birds are flying in the sky.
+Birds are singing. 
+The grass is green. 
+The grass is soft. 
+Children are playing on the grass.
+Children are laughing.
+The day is beautiful. 
+The day is peaceful.
